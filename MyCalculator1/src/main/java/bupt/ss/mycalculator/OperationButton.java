@@ -19,8 +19,8 @@ public class OperationButton implements View.OnClickListener{
                 GridCalculator.inEq.append(" ");
                 GridCalculator.inEq.append("N");
                 GridCalculator.showEq.append(btn.getText());
-                GridCalculator.setShowText(GridCalculator.tv_result, GridCalculator.showResult);
-                GridCalculator.setShowText(GridCalculator.tv_equ, GridCalculator.showEq);
+                Display.setShowText(GridCalculator.tv_result, GridCalculator.showResult);
+                Display.setShowText(GridCalculator.tv_equ, GridCalculator.showEq);
                 GridCalculator.isPos = false;
             }
 
@@ -33,8 +33,8 @@ public class OperationButton implements View.OnClickListener{
                 GridCalculator.inEq.append(" ");
                 GridCalculator.inEq.append(btn.getText());
                 GridCalculator.showEq.append(btn.getText());
-                GridCalculator.setShowText(GridCalculator.tv_equ, GridCalculator.showEq);
-                GridCalculator.setShowText(GridCalculator.tv_result, GridCalculator.showResult);
+                Display.setShowText(GridCalculator.tv_equ, GridCalculator.showEq);
+                Display.setShowText(GridCalculator.tv_result, GridCalculator.showResult);
                 GridCalculator.isFirst = true;
                 GridCalculator.isPoint = false;
             }
@@ -52,8 +52,8 @@ public class OperationButton implements View.OnClickListener{
                 GridCalculator.inEq.append(" ");
                 GridCalculator.inEq.append(btn.getText());
                 GridCalculator.showEq.append(btn.getText());
-                GridCalculator.setShowText(GridCalculator.tv_equ, GridCalculator.showEq);
-                GridCalculator.setShowText(GridCalculator.tv_result, GridCalculator.showResult);
+                Display.setShowText(GridCalculator.tv_equ, GridCalculator.showEq);
+                Display.setShowText(GridCalculator.tv_result, GridCalculator.showResult);
                 GridCalculator.isOp = false;
             }
         }
@@ -62,10 +62,10 @@ public class OperationButton implements View.OnClickListener{
         if (btn.getText().equals("=")) {
             GridCalculator.showResult.setLength(0);
             GridCalculator.result = Calculator.countResult(GridCalculator.inEq.toString());
-            GridCalculator.setShowText(GridCalculator.tv_result, GridCalculator.showResult.append(GridCalculator.result));
+            Display.setShowText(GridCalculator.tv_result, GridCalculator.showResult.append(GridCalculator.result));
             GridCalculator.showResult.setLength(0);
             GridCalculator.showEq.setLength(0);
-            GridCalculator.clear();
+            Display.clear();
             return;
         }
 
@@ -76,8 +76,8 @@ public class OperationButton implements View.OnClickListener{
             GridCalculator.inEq.append(" ");
             GridCalculator.inEq.append(btn.getText());
             GridCalculator.showEq.append(btn.getText());
-            GridCalculator.setShowText(GridCalculator.tv_equ, GridCalculator.showEq);
-            GridCalculator.setShowText(GridCalculator.tv_result, GridCalculator.showResult);
+            Display.setShowText(GridCalculator.tv_equ, GridCalculator.showEq);
+            Display.setShowText(GridCalculator.tv_result, GridCalculator.showResult);
             GridCalculator.num_first.setLength(0);
             GridCalculator.prevId = btn.getId();
             GridCalculator.isFirst = true;

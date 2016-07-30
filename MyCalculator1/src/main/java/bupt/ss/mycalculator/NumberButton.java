@@ -24,8 +24,8 @@ public class NumberButton implements View.OnClickListener {
                 GridCalculator.num_first.append(input.toString());
                 GridCalculator.inEq.append(input.toString());
                 GridCalculator.showEq.append(input.toString());
-                GridCalculator.setShowText(GridCalculator.tv_equ, GridCalculator.showEq);
-                GridCalculator.setShowText(GridCalculator.tv_result, GridCalculator.showResult);
+                Display.setShowText(GridCalculator.tv_equ, GridCalculator.showEq);
+                Display.setShowText(GridCalculator.tv_result, GridCalculator.showResult);
                 GridCalculator.isPoint = true;
                 GridCalculator.isFirst = false;
                 return;
@@ -46,8 +46,8 @@ public class NumberButton implements View.OnClickListener {
         GridCalculator.num_first.append(input.toString());
         GridCalculator.inEq.append(input.toString());
         GridCalculator.showEq.append(input.toString());
-        GridCalculator.setShowText(GridCalculator.tv_equ, GridCalculator.showEq);
-        GridCalculator.setShowText(GridCalculator.tv_result, GridCalculator.showResult);
+        Display.setShowText(GridCalculator.tv_equ, GridCalculator.showEq);
+        Display.setShowText(GridCalculator.tv_result, GridCalculator.showResult);
         GridCalculator.isOp = false;
         GridCalculator.isHead = false;
     }
