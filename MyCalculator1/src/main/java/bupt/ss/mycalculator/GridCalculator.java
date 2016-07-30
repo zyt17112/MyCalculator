@@ -13,47 +13,49 @@ import android.widget.Toast;
 public class GridCalculator extends Activity implements View.OnClickListener {
 
     // 计算结果
-    float result = 0F;
+    static float result = 0F;
 
     // 前一个运算符号
-    private int prevId = R.id.btn_equal;
+    protected static int prevId = R.id.btn_equal;
 
     // 显示初始值
-    private final static String initialValue = "0.0";
+    protected final static String initialValue = "0.0";
 
     // 是否是中缀运算式的第一个元素
-    private boolean isHead = true;
+    protected static boolean isHead = true;
 
     // 是否是下一个元素的首次输入
-    private boolean isFirst = true;
+    protected static boolean isFirst = true;
 
     // 是否存在小数点
-    private boolean isPoint = false;
+    protected static boolean isPoint = false;
 
     // 是否是正数
-    private boolean isPos = true;
+    protected static boolean isPos = true;
 
     // 前一个元素是否是运算符
-    private boolean isOp = false;
+    protected static boolean isOp = false;
 
     // 存储数值字符串
-    private StringBuilder num_first = new StringBuilder();
+    protected static StringBuilder num_first = new StringBuilder();
 
     // 计算式显示字符串
-    private StringBuilder showEq = new StringBuilder();
+    protected static StringBuilder showEq = new StringBuilder();
 
     // 中缀表达式字符串
-    private StringBuilder inEq = new StringBuilder();
+    protected static StringBuilder inEq = new StringBuilder();
 
     // 中缀表达式字符数组
-    private String[] strEq;
+    protected static String[] strEq;
 
 
-    Button btn_clear;
-    TextView tv_equ, tv_result;
-    StringBuilder showResult = new StringBuilder(initialValue);
-    Button[] btn_num;   // 数字键
-    Button[] btn_op;    // 运算符
+    protected static Button btn_clear;
+    protected static Button btn_back;
+    protected static TextView tv_equ, tv_result;
+    protected static StringBuilder showResult = new StringBuilder(initialValue);
+    protected static Button[] btn_num;   // 数字键
+    protected static Button[] btn_op;    // 运算符
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +63,7 @@ public class GridCalculator extends Activity implements View.OnClickListener {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_grid_calculator);
         Log.d("GridCalculator", "onCreate execute");
-        Button btn_back = (Button) findViewById(R.id.btn_back);
+        btn_back = (Button) findViewById(R.id.btn_back);
         btn_clear = (Button) findViewById(R.id.btn_clear);
         tv_equ = (TextView) findViewById(R.id.txt_equ);
         tv_equ.setText("0.0");
@@ -130,7 +132,7 @@ public class GridCalculator extends Activity implements View.OnClickListener {
         }
     }
 
-    private class NumberButton implements View.OnClickListener {
+    /* private class NumberButton implements View.OnClickListener {
         @Override
         public void onClick(View v) {
             Button btn = (Button) v;
@@ -174,7 +176,7 @@ public class GridCalculator extends Activity implements View.OnClickListener {
             isOp = false;
             isHead = false;
         }
-    }
+    }*/
 
     private class OperationButton implements View.OnClickListener {
         @Override
@@ -258,7 +260,7 @@ public class GridCalculator extends Activity implements View.OnClickListener {
     }
 
     // 重置运算符，首次输入，小数点，存在运算符，数字存储器归空
-    public void clear() {      // 输入等号以后重置的数据
+    public static void clear() {      // 输入等号以后重置的数据
         prevId = R.id.btn_equal;
         isFirst = true;
         isPoint = false;
@@ -268,7 +270,7 @@ public class GridCalculator extends Activity implements View.OnClickListener {
         num_first.setLength(0);
     }
 
-    public void back() {
+    public static void back() {
         int sL = showEq.length();
         int iL = inEq.length();
 
@@ -296,7 +298,7 @@ public class GridCalculator extends Activity implements View.OnClickListener {
         }
     }
 
-    public void setShowText(TextView tv, StringBuilder sb) {
+    public static void setShowText(TextView tv, StringBuilder sb) {
         int sL = sb.length();
         if (sL > 11) {
             tv.setText(sb.substring(sL - 11));

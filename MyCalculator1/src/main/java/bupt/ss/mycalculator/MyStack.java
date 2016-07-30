@@ -5,8 +5,8 @@ package bupt.ss.mycalculator;
  */
 public interface MyStack {
     
-    public boolean empty();
-    public Object peek();
-    public void push(Object theObject);
-    public Object pop();
+    boolean empty();
+    Object peek();
+    void push(Object theObject);
+    Object pop();
 }
