@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">MyCalculator</string>
+    <string name="btn_7">7</string>
+    <string name="btn_8">8</string>
+    <string name="btn_9">9</string>
+    <string name="btn_4">4</string>
+    <string name="btn_5">5</string>
+    <string name="btn_6">6</string>
+    <string name="btn_1">1</string>
+    <string name="btn_2">2</string>
+    <string name="btn_3">3</string>
+    <string name="btn_0">0</string>
+    <string name="btn_left">(</string>
+    <string name="btn_right">)</string>
+    <string name="btn_clear">清除</string>
+    <string name="btn_back">退格</string>
+    <string name="btn_point">.</string>
+    <string name="btn_plus">+</string>
+    <string name="btn_minus">-</string>
+    <string name="btn_times">×</string>
+    <string name="btn_division">÷</string>
+    <string name="btn_equal">=</string>
+    <string name="btn_toCalcu">单击我进入计算器</string>
+    <string name="textview">我的计算器</string>
+</resources>
