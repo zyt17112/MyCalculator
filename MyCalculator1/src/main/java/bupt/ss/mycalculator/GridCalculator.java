@@ -178,7 +178,7 @@ public class GridCalculator extends Activity implements View.OnClickListener {
         }
     }*/
 
-    private class OperationButton implements View.OnClickListener {
+    /* private class OperationButton implements View.OnClickListener {
         @Override
         public void onClick(View v) {
             Button btn = (Button) findViewById(v.getId());
@@ -257,7 +257,7 @@ public class GridCalculator extends Activity implements View.OnClickListener {
                 isOp = true;
             }
         }
-    }
+    }*/
 
     // 重置运算符，首次输入，小数点，存在运算符，数字存储器归空
     public static void clear() {      // 输入等号以后重置的数据
